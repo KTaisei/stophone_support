@@ -1,7 +1,7 @@
 # スマホ加速度計アプリ
 
 このアプリは、スマートフォンの加速度センサーを使用して、加速度データをリアルタイムで記録し、CSV形式で保存・共有できるアプリです。
-<br>また、このアプリはStophone(https://github.com/KTaisei/stophone)の開発支援を行うために開発されました。
+<br>また、このアプリはStophone( https://github.com/KTaisei/stophone )の開発支援を行うために開発されました。
 
 ## 主な機能
 
