@@ -8,14 +8,14 @@ import 'package:share_plus/share_plus.dart';
 import 'package:permission_handler/permission_handler.dart'; 
 import 'package:path_provider/path_provider.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       home: SensorRecorder(),
     );
   }
