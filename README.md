@@ -1,16 +1,38 @@
-# stophone_support
+# スマホ加速度計アプリ
 
-A new Flutter project.
+このアプリは、スマートフォンの加速度センサーを使用して、加速度データをリアルタイムで記録し、CSV形式で保存・共有できるアプリです。
+<br>また、このアプリはStophone(https://github.com/KTaisei/stophone)の開発支援を行うために開発されました。
 
-## Getting Started
+## 主な機能
 
-This project is a starting point for a Flutter application.
+- **加速度データの記録**: スマートフォンの加速度センサーを使用して、X、Y、Z軸の加速度データをリアルタイムで記録します。
+- **記録の開始と停止**: ボタンを押すことで、加速度データの記録を開始または停止できます。
+- **CSV形式で保存**: 記録した加速度データをCSV形式で保存し、端末の「ダウンロード」フォルダに保存します。
+- **ファイルの共有**: 保存したCSVファイルを他のアプリ（Google Driveなど）と共有できます。
 
-A few resources to get you started if this is your first Flutter project:
+## 使用方法
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+1. **加速度データの記録を開始**: 「記録開始」ボタンを押して、加速度データの記録を開始します。
+2. **記録を停止**: 「記録停止」ボタンを押して、データの記録を停止します。
+3. **CSVファイルを保存**: 記録したデータは、CSVファイルとして保存されます。
+4. **CSVファイルを共有**: 保存したファイルは、`share_plus`パッケージを使って他のアプリ（例: Google Drive）と共有できます。
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 必要なパーミッション
+
+アプリが加速度センサーとストレージにアクセスするため、以下のパーミッションが必要です：
+
+- **加速度センサーの利用権限**
+- **外部ストレージの書き込み権限**（ファイルを保存するため）
+
+## 技術スタック
+
+- **Flutter**: クロスプラットフォームのモバイルアプリ開発に使用。
+- **sensors_plus**: 加速度センサーのデータを取得するために使用。
+- **path_provider**: デバイスのストレージへのパスを取得するために使用。
+- **share_plus**: 保存したCSVファイルを他のアプリと共有するために使用。
+
+## インストールと実行
+
+1. プロジェクトをクローンします。
+   ```bash
+   git clone "https://github.com/KTaisei/stophone_support"
