@@ -36,3 +36,10 @@
 1. プロジェクトをクローンします。
    ```bash
    git clone "https://github.com/KTaisei/stophone_support"
+2. ライブラリをインストールします
+   ```bash
+   flutter pub get
+3. APKファイルの作成
+   ```bash
+   flutter build apk
+これでAPKファイルを作成でき、このファイルをAndroid端末内で、開くことにより、インストールできます。
