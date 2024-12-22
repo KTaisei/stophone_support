@@ -11,6 +11,8 @@ import 'package:path_provider/path_provider.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -20,6 +22,8 @@ class MyApp extends StatelessWidget {
 }
 
 class SensorRecorder extends StatefulWidget {
+  const SensorRecorder({super.key});
+
   @override
   _SensorRecorderState createState() => _SensorRecorderState();
 }
@@ -28,7 +32,7 @@ class _SensorRecorderState extends State<SensorRecorder> {
   List<List<dynamic>> _accelerometerData = [];
   StreamSubscription? _subscription;
   bool _isRecording = false;
-  List<String> _savedFiles = []; // 保存されたCSVファイルのリスト
+  final List<String> _savedFiles = []; // 保存されたCSVファイルのリスト
 
   @override
   void initState() {
@@ -116,7 +120,7 @@ class _SensorRecorderState extends State<SensorRecorder> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('加速度データ記録')),
+      appBar: AppBar(title: const Text('加速度データ記録')),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -124,24 +128,24 @@ class _SensorRecorderState extends State<SensorRecorder> {
             child: _isRecording
                 ? Text(
                     '記録中: ${_accelerometerData.length - 1} 件', // ヘッダー行を除外
-                    style: TextStyle(fontSize: 20, color: Colors.green),
+                    style: const TextStyle(fontSize: 20, color: Colors.green),
                   )
-                : Text(
+                : const Text(
                     '記録停止中',
                     style: TextStyle(fontSize: 20, color: Colors.red),
                   ),
           ),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
           ElevatedButton(
             onPressed: _isRecording ? null : _startRecording,
-            child: Text('記録開始'),
+            child: const Text('記録開始'),
           ),
           ElevatedButton(
             onPressed: _isRecording ? _stopRecording : null,
-            child: Text('記録停止'),
+            child: const Text('記録停止'),
           ),
-          Divider(),
-          Text(
+          const Divider(),
+          const Text(
             '保存されたファイル',
             style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
           ),
@@ -153,7 +157,7 @@ class _SensorRecorderState extends State<SensorRecorder> {
                 return ListTile(
                   title: Text(filePath),
                   trailing: IconButton(
-                    icon: Icon(Icons.share),
+                    icon: const Icon(Icons.share),
                     onPressed: () => _shareFile(filePath), // 共有ボタン
                   ),
                   onTap: () => ScaffoldMessenger.of(context).showSnackBar(
