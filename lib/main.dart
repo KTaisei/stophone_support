@@ -5,8 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:sensors_plus/sensors_plus.dart';
 import 'package:csv/csv.dart';
 import 'package:share_plus/share_plus.dart';
-import 'package:permission_handler/permission_handler.dart'; // パーミッション管理
-import 'package:path_provider/path_provider.dart'; // 正しくインポート
+import 'package:permission_handler/permission_handler.dart'; 
+import 'package:path_provider/path_provider.dart';
 
 void main() => runApp(MyApp());
 
@@ -41,13 +41,13 @@ class _SensorRecorderState extends State<SensorRecorder> {
     await Permission.storage.request();
   }
 
-  // 外部ストレージのDownloadフォルダのパスを取得
+  // ストレージのDownloadフォルダのパスを取得
   Future<String> getDownloadDirectory() async {
     final directory = await getExternalStorageDirectory();
     if (directory != null) {
       return directory.path;
     } else {
-      throw Exception('外部ストレージのパスが取得できません');
+      throw Exception('ストレージのパスが取得できません');
     }
   }
 
